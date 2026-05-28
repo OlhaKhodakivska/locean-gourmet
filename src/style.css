@@ -4,17 +4,30 @@
   --light-gray: #f4f4f4;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: var(--dark);
   color: var(--light-gray);
   -webkit-font-smoothing: antialiased;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
   text-align: center;
   padding: 80px 20px 40px;
+}
+
+main {
+  flex: 1;
 }
 
 .subtitle {
@@ -445,6 +458,46 @@ footer {
     padding: 14px;
     font-size: 0.75rem;
   }
+
+  footer {
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-logo {
+    font-size: 2rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    margin: 0;
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+  }
+
 }
 
 @keyframes modalSlideUp {
