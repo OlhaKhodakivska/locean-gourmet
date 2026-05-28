@@ -7,7 +7,7 @@ const subtotalEl = document.getElementById("subtotal");
 const finalTotalEl = document.getElementById("final-total");
 const tipCheckbox = document.getElementById("tip-checkbox");
 
-// Елементи модального вікна
+
 const modal = document.getElementById("custom-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalMessage = document.getElementById("modal-message");
@@ -16,19 +16,17 @@ const modalClose = document.getElementById("modal-close");
 let cart = [];
 const API_URL = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
 
-// Функція для показу стилізованого модального вікна
+
 function showModal(title, message) {
   modalTitle.innerText = title;
   modalMessage.innerText = message;
   modal.classList.add("active");
 }
 
-// Закриття модального вікна
 modalClose.addEventListener("click", () => {
   modal.classList.remove("active");
 });
 
-// Закриття при кліку на фон поза вікном
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.classList.remove("active");
@@ -111,7 +109,7 @@ function updateCartUI() {
 
 tipCheckbox.addEventListener('change', updateCartUI);
 
-// Оновлена логіка оформлення замовлення з модальним вікном
+
 document.getElementById('checkout-btn').addEventListener('click', () => {
   if (cart.length === 0) {
     showModal("Cart is Empty", "Please select your favorite seafood dishes before confirming the order.");
